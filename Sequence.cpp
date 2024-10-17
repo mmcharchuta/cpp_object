@@ -1,12 +1,12 @@
-#include "Fasta_reader.h"
+#include "Sequence.h"
 #include <fstream>
 #include <iostream>
 
 // Constructor
-Fasta_reader::Fasta_reader() : sequenceData("") {}
+Sequence::Sequence() : sequenceData("") {}
 
 // Method to read a sequence from a FASTA file
-void Fasta_reader::readFasta(const std::string &filePath) {
+void Sequence::readFasta(const std::string &filePath) {
     std::ifstream file(filePath);
     if (!file.is_open()) {
         std::cerr << "Error opening file!" << std::endl;
@@ -24,7 +24,7 @@ void Fasta_reader::readFasta(const std::string &filePath) {
 }
 
 // Getter for sequence data
-std::string Fasta_reader::getSequence() const {
+std::string Sequence::getSequence() const {
     return sequenceData;
 }
 

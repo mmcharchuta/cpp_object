@@ -3,12 +3,12 @@
 
 #include <string>
 
-class Fasta_reader {
+class Sequence {
 private:
     std::string sequenceData;
 public:
     // Constructor
-    Fasta_reader();
+    Sequence();
 
     // Method to read a sequence from a FASTA file
     void readFasta(const std::string &filePath);
