@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_executable(cpp_object main.cpp
+add_executable(cpp_object
+        main.cpp
         Sequence.cpp
-        Sequence.h)
+        MDNA.cpp)
