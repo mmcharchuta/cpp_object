@@ -11,9 +11,14 @@ int main() {
     string GenomeFilePath = "C:\\Users\\Lenovo\\CLionProjects\\cpp_object\\Genome.fasta";  // Replace with your FASTA file path
     Pair.getGenome().readFasta(GenomeFilePath);
 
-    cout << Pair.getMotif().getSequence() << endl;
-    cout << Pair.getGenome().getSequence() << endl;
+    cout << "Motif sequence: " << Pair.getMotif().getSequence() << endl;
+    cout << "Genome sequence: " << Pair.getGenome().getSequence() << endl;
 
+    vector<string> substrings = Pair.getSubstrings(k, Pair);
+    cout << "Print out all " << substrings.size() << " substrings:" <<endl;
+    for (const auto& substring : substrings) {
+        std::cout << substring << std::endl;
+    }
 
 
     return 0;

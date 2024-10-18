@@ -19,7 +19,7 @@ public:
     Sequence& getGenome(); // {return Genome;}
     void setGenome(const Sequence& genome) { Genome = genome; }
 
-    std::vector<std::string> getSubstrings();
+    vector<string> getSubstrings(int k, MDNA Pair);
 
 
 };

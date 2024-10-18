@@ -16,12 +16,10 @@ Sequence& MDNA::getGenome() {
     return Genome;
 }
 
-
-
-/*vector<string> MDNA::getSubstrings() {
-    vector<std::string> substrings;
-    string genomeSeq = Genome;
-    string motifSeq = Motif;
+vector<string> MDNA::getSubstrings(int k, MDNA Pair) {
+    vector<string> substrings;
+    string motifSeq = Pair.getMotif().getSequence();
+    string genomeSeq = Pair.getGenome().getSequence();
 
     int motifLength = motifSeq.length();
     int minLength = motifLength - k;
@@ -40,4 +38,4 @@ Sequence& MDNA::getGenome() {
     }
 
     return substrings;
-}*/
+}
