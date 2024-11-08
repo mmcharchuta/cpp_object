@@ -248,6 +248,9 @@ cpp_object_BINARY_DIR:STATIC=C:/Users/Lenovo/CLionProjects/cpp_object/cmake-buil
 //Value Computed by CMake
 cpp_object_IS_TOP_LEVEL:STATIC=ON
 
+//Dependencies for the target
+cpp_object_LIB_DEPENDS:STATIC=general;C:/Users/Lenovo/CLionProjects/programowanie_obiektowe_cpp/libs/libsequence_shared_lib.dll;
+
 //Value Computed by CMake
 cpp_object_SOURCE_DIR:STATIC=C:/Users/Lenovo/CLionProjects/cpp_object
 
