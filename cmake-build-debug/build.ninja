@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_cpp_object: phony || .
 build CMakeFiles/cpp_object.dir/MDNA.cpp.obj: CXX_COMPILER__cpp_object_unscanned_Debug C$:/Users/Lenovo/CLionProjects/cpp_object/MDNA.cpp || cmake_object_order_depends_target_cpp_object
   DEFINES = -Dcpp_object_EXPORTS
   DEP_FILE = CMakeFiles\cpp_object.dir\MDNA.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Lenovo/CLionProjects/cpp_object
   OBJECT_DIR = CMakeFiles\cpp_object.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp_object.dir
@@ -60,7 +60,7 @@ build CMakeFiles/cpp_object.dir/MDNA.cpp.obj: CXX_COMPILER__cpp_object_unscanned
 build CMakeFiles/cpp_object.dir/Sequence.cpp.obj: CXX_COMPILER__cpp_object_unscanned_Debug C$:/Users/Lenovo/CLionProjects/cpp_object/Sequence.cpp || cmake_object_order_depends_target_cpp_object
   DEFINES = -Dcpp_object_EXPORTS
   DEP_FILE = CMakeFiles\cpp_object.dir\Sequence.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Lenovo/CLionProjects/cpp_object
   OBJECT_DIR = CMakeFiles\cpp_object.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp_object.dir
@@ -95,7 +95,7 @@ build cmake_object_order_depends_target_cpp_object_test: phony || cmake_object_o
 
 build CMakeFiles/cpp_object_test.dir/main.cpp.obj: CXX_COMPILER__cpp_object_test_unscanned_Debug C$:/Users/Lenovo/CLionProjects/cpp_object/main.cpp || cmake_object_order_depends_target_cpp_object_test
   DEP_FILE = CMakeFiles\cpp_object_test.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Lenovo/CLionProjects/cpp_object
   OBJECT_DIR = CMakeFiles\cpp_object_test.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp_object_test.dir
