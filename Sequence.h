@@ -3,14 +3,17 @@
 
 #include <string>
 
-class Sequence {
-private:
-    std::string sequence;
 
-public:
-    Sequence();
-    bool readFasta(const std::string& filePath);
-    std::string getSequence() const;
-};
+namespace MC {
+    class Sequence {
+    private:
+        std::string sequence;
+
+    public:
+        Sequence();
+        bool readFasta(const std::string& filePath);
+        std::string getSequence() const;
+    };
 
 #endif // SEQUENCE_H
+}
