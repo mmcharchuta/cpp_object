@@ -1,21 +1,21 @@
 #ifndef SEQUENCE_H
 #define SEQUENCE_H
-using namespace std;
+
 #include <string>
 
 class Sequence {
 private:
-    string sequenceData;
+    std::string sequence;
+
 public:
     // Constructor
     Sequence();
 
-    // Method to read a sequence from a FASTA file
-    void readFasta(const string &filePath);
-    string getSequence();
+    // Method to read FASTA file
+    bool readFasta(const std::string& filePath);
 
-    };
+    // Getter for sequence
+    std::string getSequence() const;
+};
 
-
-#endif
-
+#endif // SEQUENCE_H

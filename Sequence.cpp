@@ -1,24 +1,33 @@
 #include "Sequence.h"
 #include <fstream>
+#include <sstream>
 #include <iostream>
-using namespace std;
 
-// Constructor
-Sequence::Sequence() : sequenceData("") {}
+Sequence::Sequence() : sequence("") {}
 
-// Method to read a sequence from a FASTA file
-void Sequence::readFasta(const std::string &filePath) {
+// Reads a sequence from a FASTA file
+bool Sequence::readFasta(const std::string& filePath) {
     std::ifstream file(filePath);
-    std::string line;
-    while (getline(file, line)) {
-        if (line[0] != '>') {  // Ignore header lines starting with '>'
-            sequenceData += line;
-        }
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open file " << filePath << std::endl;
+        return false;
     }
 
+    std::string line;
+    std::ostringstream seqStream;
+
+    while (std::getline(file, line)) {
+        // Skip header line starting with '>'
+        if (line[0] == '>') continue;
+        // Append sequence lines
+        seqStream << line;
+    }
+
+    sequence = seqStream.str();
     file.close();
+    return true;
 }
 
-string Sequence::getSequence() {
-    return sequenceData;
+std::string Sequence::getSequence() const {
+    return sequence;
 }

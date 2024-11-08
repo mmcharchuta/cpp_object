@@ -1,11 +1,11 @@
 #include "MDNA.h"
+#include <algorithm>  // for std::min
 #include <vector>
 #include <string>
-using namespace std;
+#include <iostream>
 
-// Constructor definition
 MDNA::MDNA() {
-    // Initialize any members if necessary, or leave it empty
+    // Initialize members if needed
 }
 
 Sequence& MDNA::getMotif() {
@@ -16,26 +16,41 @@ Sequence& MDNA::getGenome() {
     return Genome;
 }
 
-vector<string> MDNA::getSubstrings(int k, MDNA Pair) {
-    vector<string> substrings;
-    string motifSeq = Pair.getMotif().getSequence();
-    string genomeSeq = Pair.getGenome().getSequence();
+std::vector<std::string> MDNA::getSubstrings(int k) {
+    std::vector<std::string> substrings;
+    std::vector<std::string> FittingSubstrings;
+    std::string motifSeq = Motif.getSequence();
+    std::string genomeSeq = Genome.getSequence();
 
     int motifLength = motifSeq.length();
     int minLength = motifLength - k;
     int genomeLength = genomeSeq.length();
 
-    // Ensure minLength is not less than 1
     if (minLength < 1) {
         minLength = 1;
     }
 
-    // Iterate over the genome to extract substrings of the valid lengths
     for (int length = minLength; length <= motifLength; ++length) {
         for (int i = 0; i <= genomeLength - length; ++i) {
-            substrings.push_back(genomeSeq.substr(i, length));
+            std::string substring = genomeSeq.substr(i, length);
+            if (calculateDistance(substring, motifSeq) <= k) {
+                FittingSubstrings.push_back(substring);
+            }
+            substrings.push_back(substring);
         }
     }
-
     return substrings;
+}
+
+int MDNA::calculateDistance(const std::string& str1, const std::string& str2) {
+    if (str1.length() != str2.length()) {
+        return -1;
+    }
+    int distance = 0;
+    for (size_t i = 0; i < str1.length(); ++i) {
+        if (str1[i] != str2[i]) {
+            ++distance;
+        }
+    }
+    return distance;
 }
