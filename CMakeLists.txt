@@ -1,11 +1,10 @@
-cmake_minimum_required(VERSION 3.29)
+cmake_minimum_required(VERSION 3.10)
 project(cpp_object)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(.)
+add_library(cpp_object SHARED MDNA.cpp Sequence.cpp)
+target_include_directories(cpp_object PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-add_executable(cpp_object
-        main.cpp
-        Sequence.cpp
-        MDNA.cpp)
+add_executable(cpp_object_test main.cpp)
+target_link_libraries(cpp_object_test PRIVATE cpp_object)

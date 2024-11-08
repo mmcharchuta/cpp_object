@@ -41,7 +41,7 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/Lenovo/CLionProjects/cpp_object/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target cpp_object
+# Object build statements for SHARED_LIBRARY target cpp_object
 
 
 #############################################
@@ -49,44 +49,74 @@ cmake_ninja_workdir = C$:/Users/Lenovo/CLionProjects/cpp_object/cmake-build-debu
 
 build cmake_object_order_depends_target_cpp_object: phony || .
 
-build CMakeFiles/cpp_object.dir/main.cpp.obj: CXX_COMPILER__cpp_object_unscanned_Debug C$:/Users/Lenovo/CLionProjects/cpp_object/main.cpp || cmake_object_order_depends_target_cpp_object
-  DEP_FILE = CMakeFiles\cpp_object.dir\main.cpp.obj.d
+build CMakeFiles/cpp_object.dir/MDNA.cpp.obj: CXX_COMPILER__cpp_object_unscanned_Debug C$:/Users/Lenovo/CLionProjects/cpp_object/MDNA.cpp || cmake_object_order_depends_target_cpp_object
+  DEFINES = -Dcpp_object_EXPORTS
+  DEP_FILE = CMakeFiles\cpp_object.dir\MDNA.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Lenovo/CLionProjects/cpp_object/.
+  INCLUDES = -IC:/Users/Lenovo/CLionProjects/cpp_object
   OBJECT_DIR = CMakeFiles\cpp_object.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp_object.dir
 
 build CMakeFiles/cpp_object.dir/Sequence.cpp.obj: CXX_COMPILER__cpp_object_unscanned_Debug C$:/Users/Lenovo/CLionProjects/cpp_object/Sequence.cpp || cmake_object_order_depends_target_cpp_object
+  DEFINES = -Dcpp_object_EXPORTS
   DEP_FILE = CMakeFiles\cpp_object.dir\Sequence.cpp.obj.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Lenovo/CLionProjects/cpp_object/.
-  OBJECT_DIR = CMakeFiles\cpp_object.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp_object.dir
-
-build CMakeFiles/cpp_object.dir/MDNA.cpp.obj: CXX_COMPILER__cpp_object_unscanned_Debug C$:/Users/Lenovo/CLionProjects/cpp_object/MDNA.cpp || cmake_object_order_depends_target_cpp_object
-  DEP_FILE = CMakeFiles\cpp_object.dir\MDNA.cpp.obj.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Lenovo/CLionProjects/cpp_object/.
+  INCLUDES = -IC:/Users/Lenovo/CLionProjects/cpp_object
   OBJECT_DIR = CMakeFiles\cpp_object.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp_object.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target cpp_object
+# Link build statements for SHARED_LIBRARY target cpp_object
 
 
 #############################################
-# Link the executable cpp_object.exe
+# Link the shared library libcpp_object.dll
 
-build cpp_object.exe: CXX_EXECUTABLE_LINKER__cpp_object_Debug CMakeFiles/cpp_object.dir/main.cpp.obj CMakeFiles/cpp_object.dir/Sequence.cpp.obj CMakeFiles/cpp_object.dir/MDNA.cpp.obj
-  FLAGS = -g
+build libcpp_object.dll libcpp_object.dll.a: CXX_SHARED_LIBRARY_LINKER__cpp_object_Debug CMakeFiles/cpp_object.dir/MDNA.cpp.obj CMakeFiles/cpp_object.dir/Sequence.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cpp_object.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = cpp_object.exe
+  RESTAT = 1
+  TARGET_FILE = libcpp_object.dll
   TARGET_IMPLIB = libcpp_object.dll.a
-  TARGET_PDB = cpp_object.exe.dbg
+  TARGET_PDB = cpp_object.dll.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target cpp_object_test
+
+
+#############################################
+# Order-only phony target for cpp_object_test
+
+build cmake_object_order_depends_target_cpp_object_test: phony || cmake_object_order_depends_target_cpp_object
+
+build CMakeFiles/cpp_object_test.dir/main.cpp.obj: CXX_COMPILER__cpp_object_test_unscanned_Debug C$:/Users/Lenovo/CLionProjects/cpp_object/main.cpp || cmake_object_order_depends_target_cpp_object_test
+  DEP_FILE = CMakeFiles\cpp_object_test.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Lenovo/CLionProjects/cpp_object
+  OBJECT_DIR = CMakeFiles\cpp_object_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\cpp_object_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target cpp_object_test
+
+
+#############################################
+# Link the executable cpp_object_test.exe
+
+build cpp_object_test.exe: CXX_EXECUTABLE_LINKER__cpp_object_test_Debug CMakeFiles/cpp_object_test.dir/main.cpp.obj | libcpp_object.dll.a || libcpp_object.dll
+  FLAGS = -g
+  LINK_LIBRARIES = libcpp_object.dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\cpp_object_test.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = cpp_object_test.exe
+  TARGET_IMPLIB = libcpp_object_test.dll.a
+  TARGET_PDB = cpp_object_test.exe.dbg
 
 
 #############################################
@@ -114,7 +144,9 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build cpp_object: phony cpp_object.exe
+build cpp_object: phony libcpp_object.dll
+
+build cpp_object_test: phony cpp_object_test.exe
 
 # =============================================================================
 # Folder targets.
@@ -124,7 +156,7 @@ build cpp_object: phony cpp_object.exe
 #############################################
 # Folder: C:/Users/Lenovo/CLionProjects/cpp_object/cmake-build-debug
 
-build all: phony cpp_object.exe
+build all: phony libcpp_object.dll cpp_object_test.exe
 
 # =============================================================================
 # Built-in targets
