@@ -1,4 +1,0 @@
-C:/Users/Lenovo/CLionProjects/cpp_object/cmake-build-debug/CMakeFiles/cpp_object.dir
-C:/Users/Lenovo/CLionProjects/cpp_object/cmake-build-debug/CMakeFiles/cpp_object_test.dir
-C:/Users/Lenovo/CLionProjects/cpp_object/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Lenovo/CLionProjects/cpp_object/cmake-build-debug/CMakeFiles/rebuild_cache.dir
